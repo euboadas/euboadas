@@ -1,0 +1,109 @@
+﻿@model IEnumerable<UIDO.webmvc.Models.ProtocoloDTO>
+
+@{
+    ViewData["Title"] = "Protocolos";
+}
+
+<div class="container p-4 border">
+    <div class="row pb-2">
+        <div class="col"><h1 class="text-primary">Protocolos</h1></div>
+        <div class="col text-end pt-1">
+
+                <a asp-action="ProtocoloCreate">Crear Nuevo</a>
+
+        </div>
+
+    </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sponsor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CRO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContactoCRA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoDiagnostico)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FaseProtocolo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InvestigadorPrincipal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Regulatorio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CoordinadorClinico)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnalistaFinanciero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CoordinadorBotiquin)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sponsor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CRO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactoCRA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GrupoDiagnostico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FaseProtocolo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvestigadorPrincipal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Regulatorio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoordinadorClinico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnalistaFinanciero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoordinadorBotiquin)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "ProtocoloEdit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+</div>

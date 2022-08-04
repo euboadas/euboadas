@@ -1,0 +1,32 @@
+﻿ @if (User.IsInRole("Administrador"))
+{
+                    
+         <ul class="navbar-nav">           
+            <li>
+              <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layoutAdmin" >
+                <span>Administrador</span>
+                <span class="ms-auto">
+                  <span class="right-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </span>
+              </a>
+              <div class="collapse" id="layoutAdmin">
+                <ul class="navbar-nav ps-3">
+                  <li>
+                      <a class="nav-link px-3 bi bi-arrow-right-short" asp-area="" asp-controller="Account" asp-action="RegisterAdmin">Crear Usuario</a>                  
+                  </li>
+                  <li>
+                      <a class="nav-link px-3 bi bi-arrow-right-short" asp-area="" asp-controller="Users" asp-action="Index">Gestión Usuarios</a>                  
+                  </li>
+                  <li>
+                    <a class="nav-link px-3 bi bi-arrow-right-short" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>                 
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+        <li class="my-4"><hr class="dropdown-divider bg-dark" /></li>  
+        </ul>
+
+}

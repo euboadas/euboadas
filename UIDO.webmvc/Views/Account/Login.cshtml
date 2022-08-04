@@ -1,0 +1,67 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login Usuario";
+    Layout = "_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title text-center"> Login de Usuario</h3>
+        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" >
+            <div class="text-danger" asp-validation-summary="All"> </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-6">
+                    
+                    <div class="mb-3">
+                        <label asp-for="Email" class="col-md-2"></label>
+                        <input asp-for="Email" class="form-control" placeholder="Ingrese Email"/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="col-md-2"></label>
+                        <input asp-for="Password" class="form-control" placeholder="Ingrese Contraseña"/>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="custom-check">
+                            <label asp-for="RememberMe">
+                                <input asp-for="RememberMe" />
+                                @Html.DisplayNameFor(m=>m.RememberMe)                            
+                            </label>
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+
+                 <div class="col-sm-4 offset-2">
+
+                                
+            <img width="75%" src="~/falp.jpg" />
+        
+                 </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-success w-100 btn-lg" style="background-color:steelblue">Login</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
